@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: deliveries
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./var/postgresql:/var/lib/postgresql/data:rw
+      - ./cli:/cli
+    env_file:
+      - .env
+
+  api:
+    build: .
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    volumes:
+      - .:/usr/src/app
+    command: bash -c "yarn install && yarn start:dev"

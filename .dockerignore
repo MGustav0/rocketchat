@@ -1,0 +1,10 @@
+env
+dist
+target
+.vscode
+charts
+node_modules
+azure-pipelines.yml
+README.md
+sonar-project.properties
+.huskyrc
