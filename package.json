@@ -7,6 +7,7 @@
   "author": "Gustavo Moreira",
   "license": "ISC",
   "packageManager": "yarn@3.2.0",
+  "private": false,
   "scripts": {
     "postinstall": "husky install",
     "prepack": "pinst --disable",
@@ -24,6 +25,7 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "latest",
     "eslint-config-prettier": "^8.5.0",
