@@ -8,6 +8,14 @@
   "license": "ISC",
   "packageManager": "yarn@3.2.0",
   "scripts": {
+    "start": "node dist/server.js",
+    "dev": "cross-env NODE_ENV=dev ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn ./src/server.ts",
+    "build": "rm -rf dist && tsc",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx -f json -o ./target/lint/report.json | true",
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests --detectOpenHandles --runInBand --coverage",
+    "test-coverage": "cross-env NODE_ENV=test jest --testResultsProcessor=jest-junit --coverage --passWithNoTests --detectOpenHandles --runInBand",
+    "test:unit": "cross-env NODE_ENV=test jest --testResultsProcessor=jest-junit --coverage --passWithNoTests --detectOpenHandles --runInBand --testPathPattern=.test\\.ts",
+    "test:integration": "cross-env NODE_ENV=test jest --testResultsProcessor=jest-junit --coverage --passWithNoTests --detectOpenHandles --runInBand --testPathPattern=.spec\\.ts",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
@@ -20,9 +28,16 @@
       "cross-env CI=true yarn test --bail --findRelatedTests"
     ]
   },
+  "dependencies": {
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.23",
+    "@types/socket.io": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "commitizen": "^4.2.4",
@@ -36,6 +51,7 @@
     "eslint-plugin-import-helpers": "^1.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": ">=6",
+    "jest": "^27.5.1",
     "lint-staged": ">=10",
     "pinst": ">=2",
     "prettier": "^2.6.2",
