@@ -1,7 +1,7 @@
 {
-  "name": "websocket",
+  "name": "rocketsocket",
   "version": "1.0.0",
-  "description": "Project for practical use of PrismaIO",
+  "description": "Project for practical use of Websocket",
   "main": "index.js",
   "keywords": [],
   "author": "Gustavo Moreira",

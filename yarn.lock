@@ -3909,6 +3909,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rocketsocket@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "rocketsocket@workspace:."
+  dependencies:
+    "@commitlint/cli": ^16.2.3
+    "@commitlint/config-conventional": ^16.2.1
+    "@typescript-eslint/eslint-plugin": latest
+    "@typescript-eslint/parser": latest
+    commitizen: ^4.2.4
+    cross-env: ^7.0.3
+    cz-conventional-changelog: ^3.3.0
+    eslint: ^7.32.0
+    eslint-config-airbnb-base: latest
+    eslint-config-prettier: ^8.5.0
+    eslint-import-resolver-typescript: ^2.7.1
+    eslint-plugin-import: ^2.25.2
+    eslint-plugin-import-helpers: ^1.2.1
+    eslint-plugin-prettier: ^4.0.0
+    husky: ">=6"
+    lint-staged: ">=10"
+    pinst: ">=2"
+    prettier: ^2.6.2
+    ts-node-dev: ^1.1.8
+    typescript: ^4.6.3
+  languageName: unknown
+  linkType: soft
+
 "run-async@npm:^2.2.0":
   version: 2.4.1
   resolution: "run-async@npm:2.4.1"
@@ -4741,33 +4768,6 @@ __metadata:
   checksum: 35703ac889d419cf2aceef63daeadbe4e77227c39ab6287eeb6c1b36a746b364f50ba22e88591f5d017bc54685d8137bc2d328d0a896e4d3fd22093c0f32a9ad
   languageName: node
   linkType: hard
-
-"websocket@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "websocket@workspace:."
-  dependencies:
-    "@commitlint/cli": ^16.2.3
-    "@commitlint/config-conventional": ^16.2.1
-    "@typescript-eslint/eslint-plugin": latest
-    "@typescript-eslint/parser": latest
-    commitizen: ^4.2.4
-    cross-env: ^7.0.3
-    cz-conventional-changelog: ^3.3.0
-    eslint: ^7.32.0
-    eslint-config-airbnb-base: latest
-    eslint-config-prettier: ^8.5.0
-    eslint-import-resolver-typescript: ^2.7.1
-    eslint-plugin-import: ^2.25.2
-    eslint-plugin-import-helpers: ^1.2.1
-    eslint-plugin-prettier: ^4.0.0
-    husky: ">=6"
-    lint-staged: ">=10"
-    pinst: ">=2"
-    prettier: ^2.6.2
-    ts-node-dev: ^1.1.8
-    typescript: ^4.6.3
-  languageName: unknown
-  linkType: soft
 
 "which-boxed-primitive@npm:^1.0.2":
   version: 1.0.2
