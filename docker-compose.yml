@@ -1,25 +1,31 @@
 version: "3.9"
 
 services:
-  postgres:
-    image: postgres:latest
-    container_name: deliveries
+  # postgres:
+  #   image: postgres:latest
+  #   container_name: deliveries
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - ./var/postgresql:/var/lib/postgresql/data:rw
+  #     - ./cli:/cli
+  #   env_file:
+  #     - .env
+
+  mongo:
+    image: mongo
+    container_name: rocketSocketMongo
     ports:
-      - "5432:5432"
-    volumes:
-      - ./var/postgresql:/var/lib/postgresql/data:rw
-      - ./cli:/cli
-    env_file:
-      - .env
+      - "27017:27017"
 
   api:
     build: .
     depends_on:
-      - postgres
+      - mongo
     env_file:
       - .env
     ports:
       - "${SERVER_PORT}:${SERVER_PORT}"
     volumes:
-      - .:/usr/src/app
-    command: bash -c "yarn install && yarn start:dev"
+      - .:/usr/app
+    command: yarn dev

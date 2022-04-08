@@ -16,7 +16,7 @@ permissions-postgres:
 	"
 
 build: ## Build all docker images from docker-compose.yml
-	mkdir -p var/postgresql var/minio var/minio-config
+	mkdir -p var/postgresql
 	sudo chmod -R 777 var
 	docker-compose up --build
 

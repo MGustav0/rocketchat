@@ -1,13 +1,15 @@
-FROM alpine:3.14
+FROM node:current-alpine
 
 WORKDIR /usr/app
 
 COPY package*.json ./
+COPY yarn*.json ./
 
+RUN yarn set version berry
 RUN yarn
 
 COPY . .
 
 EXPOSE 3000
 
-CMD yarn start
+CMD ["yarn", "dev"]

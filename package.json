@@ -30,12 +30,14 @@
   },
   "dependencies": {
     "express": "^4.17.3",
+    "mongoose": "^6.2.10",
     "socket.io": "^4.4.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@types/express": "^4.17.13",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^17.0.23",
     "@types/socket.io": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "latest",
