@@ -34,10 +34,10 @@ io.on('connect', socket => {
   });
 
   socket.on('start_chat', async (data, callback) => {
+    const createChatRoomService = container.resolve(CreateChatRoomService);
     const getChatRoomByUsersService = container.resolve(
       GetChatRoomByUsersService,
     );
-    const createChatRoomService = container.resolve(CreateChatRoomService);
     const getUserBySocketIdService = container.resolve(
       GetUserBySocketIdService,
     );
@@ -46,25 +46,24 @@ io.on('connect', socket => {
     );
 
     const userLogged = await getUserBySocketIdService.execute(socket.id);
-    const idUsers = [data.idUser, userLogged._id];
-    let room = await getChatRoomByUsersService.execute(idUsers);
+
+    let room = await getChatRoomByUsersService.execute([
+      data.idUser,
+      userLogged._id,
+    ]);
 
     if (!room) {
-      room = await createChatRoomService.execute(idUsers);
+      room = await createChatRoomService.execute([userLogged._id, data.id]);
     }
-
-    console.log({ socketId: socket.id, userLogged, room });
-    console.log('join', { idChatRoom: room.idChatRoom });
 
     socket.join(room.idChatRoom);
 
-    // Get messages from room
     const messages = await getMessageByChatRoomService.execute(room.idChatRoom);
 
     callback({ room, messages });
   });
 
-  socket.on('message', async (data, callback) => {
+  socket.on('message', async data => {
     const getUserBySocketIdService = container.resolve(
       GetUserBySocketIdService,
     );

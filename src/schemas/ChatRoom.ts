@@ -9,10 +9,12 @@ type ChatRoom = Document & {
 };
 
 const ChatRoomSchema = new Schema({
-  idUsers: {
-    type: Schema.Types.ObjectId,
-    ref: 'Users',
-  },
+  idUsers: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Users',
+    },
+  ],
   idChatRoom: {
     type: String,
     default: uuid,
