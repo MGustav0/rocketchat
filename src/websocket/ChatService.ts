@@ -20,8 +20,8 @@ io.on('connect', socket => {
   });
 
   socket.on('get_users', async callback => {
-    const getAllUsersSevice = container.resolve(GetAllUsersService);
-    const users = await getAllUsersSevice.execute();
+    const getAllUsersService = container.resolve(GetAllUsersService);
+    const users = await getAllUsersService.execute();
 
     callback(users);
   });

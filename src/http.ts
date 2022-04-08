@@ -9,7 +9,8 @@ const app = express();
 
 const server = createServer(app);
 
-mongoose.connect('mongodb://localhost/rocketsocket');
+// Passe o mesmo nome da imagem na URL
+mongoose.connect('mongodb://mongo:27017/rocketsocket');
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
