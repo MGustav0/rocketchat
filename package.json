@@ -1,7 +1,7 @@
 {
   "name": "rocketsocket",
   "version": "1.0.0",
-  "description": "Project for practical use of Websocket",
+  "description": "Building a chat using websocket",
   "main": "index.js",
   "keywords": [],
   "author": "Gustavo Moreira",
