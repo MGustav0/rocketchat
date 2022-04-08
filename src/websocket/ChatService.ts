@@ -1,12 +1,14 @@
 import { container } from 'tsyringe';
 
 import { io } from '../http';
+import { CreateChatRoomService } from '../services/CreateChatRoomService';
 import { CreateUserService } from '../services/CreateUserService';
 import { GetAllUsersService } from '../services/GetAllUsersService';
+import { GetUserBySocketIdService } from '../services/GetUserBySocketIdService';
 
 io.on('connect', socket => {
   socket.on('start', async data => {
-    const { email, socket_id, avatar, name } = data;
+    const { email, avatar, name } = data;
     const createUserService = container.resolve(CreateUserService);
 
     const user = await createUserService.execute({
@@ -24,5 +26,19 @@ io.on('connect', socket => {
     const users = await getAllUsersService.execute();
 
     callback(users);
+  });
+
+  socket.on('start_chat', async (data, callback) => {
+    const createChatRoomService = container.resolve(CreateChatRoomService);
+    const getUserBySocketIdService = container.resolve(
+      GetUserBySocketIdService,
+    );
+
+    const userLogged = await getUserBySocketIdService.execute(socket.id);
+
+    // eslint-disable-next-line no-underscore-dangle
+    const room = await createChatRoomService.execute([userLogged._id, data.id]);
+
+    callback(room);
   });
 });
