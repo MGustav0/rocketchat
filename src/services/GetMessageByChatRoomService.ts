@@ -4,7 +4,7 @@ import { Message } from '../schemas/Message';
 
 @injectable()
 class GetMessageByChatRoomService {
-  async execute(roomId: string) {
+  async execute(roomId: string): Promise<Message[]> {
     const room = await Message.find({
       roomId,
     })

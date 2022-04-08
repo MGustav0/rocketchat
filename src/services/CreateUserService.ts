@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { injectable } from 'tsyringe';
 
 import { User } from '../schemas/User';
@@ -17,11 +18,13 @@ class CreateUserService {
     if (userAlreadyExists) {
       const user = await User.findOneAndUpdate(
         {
-          // eslint-disable-next-line no-underscore-dangle
           _id: userAlreadyExists._id,
         },
         {
           $set: { socket_id, avatar, name },
+        },
+        {
+          new: true,
         },
       );
       return user;

@@ -8,18 +8,10 @@ type User = Document & {
 };
 
 const UserSchema = new Schema({
-  email: {
-    type: String,
-  },
-  socket_id: {
-    type: String,
-  },
-  name: {
-    type: String,
-  },
-  avatar: {
-    type: String,
-  },
+  email: String,
+  socket_id: String,
+  name: String,
+  avatar: String,
 });
 
 const User = mongoose.model<User>('Users', UserSchema);

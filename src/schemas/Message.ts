@@ -3,8 +3,8 @@ import mongoose, { Document, Schema } from 'mongoose';
 type Message = Document & {
   to: string;
   text: string;
-  created_at: Date;
   roomId: string;
+  created_at: Date;
 };
 
 const MessageSchema = new Schema({
@@ -13,16 +13,16 @@ const MessageSchema = new Schema({
     ref: 'Users',
   },
   text: String,
-  created_at: {
-    type: Date,
-    default: Date.now(),
-  },
   roomId: {
     type: String,
     ref: 'ChatRoom',
   },
+  created_at: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
-const Message = mongoose.model<Message>('Users', MessageSchema);
+const Message = mongoose.model<Message>('Messages', MessageSchema);
 
 export { Message };
