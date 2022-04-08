@@ -7,19 +7,17 @@
 </h3>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/BrunoSSantana/rocketsocket">
+
+  ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/MGustav0/rocketchat?style=flat-square)
   
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/BrunoSSantana/rocketsocket">
+  ![GitHub last commit](https://img.shields.io/github/last-commit/MGustav0/rocketchat)
   
-  <a href="https://github.com/MGustav0/rocketchat/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/BrunoSSantana/rocketsocket">
-  </a>
-  
-  <a href="https://github.com/MGustav0/rocketchat/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/BrunoSSantana/rocketsocket">
-  </a>
-  
-  <img alt="GitHub" src="https://img.shields.io/github/license/BrunoSSantana/rocketsocket">
+  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MGustav0/rocketchat)
+
+  ![GitHub top language](https://img.shields.io/github/languages/top/MGustav0/rocketchat)
+
+  ![GitHub](https://img.shields.io/github/license/MGustav0/rocketchat)
+
 </p>
 
 <p align="center">
