@@ -10,20 +10,15 @@ type User = Document & {
 const UserSchema = new Schema({
   email: {
     type: String,
-    required: true,
-    unique: true,
   },
   socket_id: {
     type: String,
-    required: true,
   },
   name: {
     type: String,
-    required: true,
   },
   avatar: {
     type: String,
-    required: true,
   },
 });
 
