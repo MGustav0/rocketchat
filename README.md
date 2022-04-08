@@ -7,7 +7,9 @@
 </h3>
 
 <p align="center">
+
   ![GitHub commit activity](https://img.shields.io/github/commit-activity/MGustav0/rocketchat?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/MGustav0/rocketchat) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MGustav0/rocketchat) ![GitHub top language](https://img.shields.io/github/languages/top/MGustav0/rocketchat) ![GitHub](https://img.shields.io/github/license/MGustav0/rocketchat)
+
 </p>
 
 <p align="center">
